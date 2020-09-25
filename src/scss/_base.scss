@@ -1,0 +1,34 @@
+@use 'variables';
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: variables.$font-poppins;
+  font-size: 1.6rem;
+}
+
+ul {
+  list-style-type: none;
+}
+
+img {
+  height: auto;
+  width: 100%;
+}
+
+.container {
+  padding: 0 1em;
+  margin: 0 auto;
+  max-width: variables.$container-max-width;
+}

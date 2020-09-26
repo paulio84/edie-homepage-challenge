@@ -1,0 +1,32 @@
+@use '../variables';
+
+@mixin media-mobile($types...) {
+  @each $type in $types {
+    @include -media(#{$type}, variables.$breakpoint-phablet) {
+      @content ($type);
+    }
+  }
+}
+
+@mixin media-tablet($types...) {
+  @each $type in $types {
+    @include -media(#{$type}, variables.$breakpoint-tablet) {
+      @content ($type);
+    }
+  }
+}
+
+@mixin media-desktop($types...) {
+  @each $type in $types {
+    @include -media(#{$type}, variables.$breakpoint-desktop) {
+      @content ($type);
+    }
+  }
+}
+
+// private because starts with '-'
+@mixin -media($type, $breakpoint) {
+  @media only #{$type} and (min-width: $breakpoint) {
+    @content;
+  }
+}

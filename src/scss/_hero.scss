@@ -1,0 +1,85 @@
+@use 'variables';
+@use 'mixins';
+
+.hero {
+  &__question {
+    color: variables.$blue;
+    font-size: variables.$font-size-12;
+    font-weight: 500;
+  }
+
+  &__slogan,
+  &__tagline {
+    color: variables.$gray-1;
+    font-weight: 500;
+  }
+
+  &__slogan {
+    margin: {
+      bottom: 1.5rem;
+    }
+    width: 90%;
+
+    @include mixins.media-mobile(screen) using ($type) {
+      width: 55%;
+    }
+    @include mixins.media-tablet(screen) using ($type) {
+      width: 42%;
+    }
+    @include mixins.media-desktop(screen) using ($type) {
+      width: 60%;
+    }
+  }
+
+  &__image {
+    border-radius: 18px;
+    height: 145px;
+    margin: 0;
+
+    @include mixins.media-mobile(screen) using ($type) {
+      height: 180px;
+    }
+    @include mixins.media-tablet(screen) using ($type) {
+      height: 200px;
+    }
+    @include mixins.media-desktop(screen) using ($type) {
+      height: 354px;
+    }
+  }
+
+  &__tagline {
+    margin: {
+      top: 2.2rem;
+      bottom: 3.3rem;
+    }
+    width: 70%;
+
+    @include mixins.media-mobile(screen) using ($type) {
+      width: 40%;
+    }
+    @include mixins.media-tablet(screen) using ($type) {
+      width: 30%;
+    }
+    @include mixins.media-desktop(screen) using ($type) {
+      width: 40%;
+    }
+  }
+
+  &__what-we-do {
+    font-size: variables.$font-size-12;
+    margin: {
+      bottom: 3.1rem;
+    }
+    width: 95%;
+
+    @include mixins.media-mobile(screen) using ($type) {
+      width: 50%;
+    }
+    @include mixins.media-tablet(screen) using ($type) {
+      width: 40%;
+    }
+    @include mixins.media-desktop(screen) using ($type) {
+      width: 55%;
+    }
+  }
+}

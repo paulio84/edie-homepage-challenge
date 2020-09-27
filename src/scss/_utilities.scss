@@ -1,0 +1,29 @@
+@use 'mixins';
+
+.u-inner-wrapper-sm {
+  padding: {
+    left: 0;
+    right: 0;
+  }
+
+  @include mixins.media-desktop(screen) using ($type) {
+    padding: {
+      left: 11.3rem;
+      right: 11.3rem;
+    }
+  }
+}
+
+.u-inner-wrapper-lg {
+  padding: {
+    left: 2.4rem;
+    right: 2.4rem;
+  }
+
+  @include mixins.media-desktop(screen) using ($type) {
+    padding: {
+      left: 22.5rem;
+      right: 22.5rem;
+    }
+  }
+}

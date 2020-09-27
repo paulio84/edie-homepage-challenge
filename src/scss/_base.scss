@@ -1,4 +1,5 @@
 @use 'variables';
+@use 'mixins';
 
 *,
 *::before,
@@ -31,4 +32,11 @@ img {
   padding: 0 1em;
   margin: 0 auto;
   max-width: variables.$container-max-width;
+
+  @include mixins.media-tablet(screen) using ($type) {
+    padding: 0 2.125em;
+  }
+  @include mixins.media-desktop(screen) using ($type) {
+    padding: 0 3.25em;
+  }
 }

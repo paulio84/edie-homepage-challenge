@@ -1,0 +1,40 @@
+@use 'variables';
+@use 'mixins';
+
+.service-card {
+  border-radius: 24px;
+  margin-bottom: 4rem;
+  padding: 4.6rem 3.4rem;
+
+  @include mixins.media-xl(screen) using ($type) {
+    margin-bottom: 0;
+  }
+
+  &__icon {
+    border-radius: 16px;
+    color: white;
+    display: inline-block;
+    line-height: 0;
+    margin-bottom: 3.5rem;
+    padding: 2.2rem 2.2rem;
+  }
+
+  &__title {
+    color: variables.$gray-1;
+    margin-bottom: 2.4rem;
+  }
+
+  &__info {
+    color: variables.$gray-2;
+    margin-bottom: 3rem;
+  }
+
+  &:hover {
+    box-shadow: 0px 10px 30px rgba(variables.$gray-1, 0.1);
+
+    > .service-card__link {
+      background-color: variables.$blue;
+      color: white;
+    }
+  }
+}

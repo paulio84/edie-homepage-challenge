@@ -1,0 +1,88 @@
+@use '../variables';
+@use '../mixins';
+
+.contact-form {
+  max-width: 350px;
+
+  &__label {
+    color: variables.$gray-3;
+    display: inline-block;
+    font-size: variables.$font-size-10;
+    font-weight: 500;
+    margin: {
+      bottom: 0.5rem;
+    }
+
+    @include mixins.media-tablet(screen) using ($type) {
+      font-size: variables.$font-size-12;
+    }
+    @include mixins.media-desktop(screen) using ($type) {
+      font-size: variables.$font-size-14;
+    }
+  }
+
+  &__input-container {
+    position: relative;
+  }
+
+  &__input {
+    background-color: variables.$gray-6;
+    border-width: 0px;
+    color: variables.$gray-4;
+    outline: none;
+    padding: {
+      bottom: 13px;
+      left: 20px;
+      right: 85px;
+      top: 13px;
+    }
+    width: 100%;
+
+    @include mixins.media-desktop(screen) using ($type) {
+      padding: {
+        bottom: 15px;
+        right: 110px;
+        top: 15px;
+      }
+    }
+
+    &::placeholder {
+      color: variables.$gray-4;
+    }
+  }
+
+  &__btn {
+    background-color: variables.$blue;
+    color: variables.$gray-6;
+    cursor: pointer;
+    display: inline-block;
+    padding: {
+      bottom: 9px;
+      top: 9px;
+    }
+    position: absolute;
+    right: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 71px;
+
+    @include mixins.media-desktop(screen) using ($type) {
+      padding: {
+        bottom: 11px;
+        top: 11px;
+      }
+      width: 94px;
+    }
+  }
+
+  &__input,
+  &__btn {
+    border-radius: 12px;
+    font-size: variables.$font-size-14;
+    font-weight: 500;
+
+    @include mixins.media-desktop(screen) using ($type) {
+      font-size: variables.$font-size-18;
+    }
+  }
+}

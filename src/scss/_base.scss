@@ -28,6 +28,13 @@ img {
   width: 100%;
 }
 
+button,
+input {
+  border-width: 0px;
+  font-family: inherit;
+  outline: none;
+}
+
 .container {
   padding: 0 1em;
   margin: 0 auto;

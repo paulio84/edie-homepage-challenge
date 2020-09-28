@@ -1,3 +1,4 @@
+@use 'variables';
 @use 'mixins';
 
 .u-inner-wrapper-sm {
@@ -26,4 +27,16 @@
       right: 22.5rem;
     }
   }
+}
+
+.u-bg-blue {
+  background-color: variables.$blue;
+}
+
+.u-bg-green {
+  background-color: variables.$green;
+}
+
+.u-bg-red {
+  background-color: variables.$red;
 }

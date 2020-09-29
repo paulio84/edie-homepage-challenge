@@ -1,0 +1,26 @@
+@use 'variables';
+@use 'mixins';
+
+.navigation {
+  display: none;
+  font-size: variables.$font-size-18;
+
+  @include mixins.media-tablet(screen) using ($type) {
+    display: block;
+    flex-grow: 1;
+  }
+
+  &__list {
+    @include mixins.media-tablet(screen) using ($type) {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__link {
+    color: variables.$gray-1;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

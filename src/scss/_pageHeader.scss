@@ -2,6 +2,7 @@
 @use 'mixins';
 
 .page-header {
+  align-items: center;
   color: variables.$gray-1;
   display: flex;
   justify-content: space-between;

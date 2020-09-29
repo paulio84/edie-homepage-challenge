@@ -1,0 +1,43 @@
+@use '../variables';
+@use '../mixins';
+
+.our-works-card {
+  margin-bottom: 4rem;
+
+  @include mixins.media-tablet(screen) using ($type) {
+    margin-left: 1em;
+    width: 48%;
+
+    &:nth-child(2n + 1) {
+      margin: {
+        bottom: 0;
+        left: 0;
+        top: 10rem;
+      }
+    }
+  }
+
+  &__image {
+    border-radius: 12px;
+  }
+
+  &__service {
+    color: variables.$gray-3;
+    font-size: variables.$font-size-12;
+    font-weight: 300;
+    margin-top: 0.5rem;
+
+    @include mixins.media-desktop(screen) using ($type) {
+      font-size: variables.$font-size-14;
+    }
+  }
+
+  &__product {
+    color: variables.$gray-1;
+    font-size: variables.$font-size-16;
+    font-weight: 500;
+    @include mixins.media-desktop(screen) using ($type) {
+      font-size: variables.$font-size-24;
+    }
+  }
+}

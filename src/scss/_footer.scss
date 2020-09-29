@@ -1,0 +1,72 @@
+@use 'variables';
+@use 'mixins';
+
+.footer {
+  background-color: variables.$footer-background;
+  padding: 4.5rem;
+
+  &__content {
+    @include mixins.media-tablet(screen) using ($type) {
+      display: flex;
+    }
+  }
+
+  &__links {
+    flex-grow: 1;
+    font-size: variables.$font-size-18;
+    margin-bottom: 6.4rem;
+
+    > li a {
+      color: white;
+      display: inline-block;
+      margin-bottom: 1rem;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__social {
+    flex-grow: 1;
+    margin-bottom: 6.5rem;
+
+    &-title {
+      color: variables.$gray-6;
+      font-size: variables.$font-size-36;
+      font-weight: 800;
+    }
+    &-icons {
+      align-items: center;
+      display: flex;
+
+      > li {
+        height: 24px;
+      }
+    }
+    &-icon {
+      padding-right: 1rem;
+    }
+  }
+}
+
+.page-footer {
+  color: variables.$gray-7;
+  font-size: variables.$font-size-14;
+  font-weight: 600;
+  margin: {
+    top: 13.3rem;
+  }
+  text-align: center;
+
+  @include mixins.media-tablet(screen) using ($type) {
+    margin: {
+      top: 5rem;
+    }
+  }
+  @include mixins.media-desktop(screen) using ($type) {
+    margin: {
+      top: 7.5rem;
+    }
+  }
+}

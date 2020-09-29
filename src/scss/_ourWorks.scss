@@ -40,10 +40,15 @@
 
   &__see-more {
     align-items: center;
-    display: flex;
     color: variables.$blue;
+    display: flex;
     font-size: variables.$font-size-18;
     line-height: 0;
+
+    > span,
+    i {
+      cursor: pointer;
+    }
 
     i {
       margin-left: 1rem;

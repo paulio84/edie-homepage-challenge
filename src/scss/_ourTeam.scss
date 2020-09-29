@@ -1,0 +1,95 @@
+@use 'variables';
+@use 'mixins';
+
+.our-team {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10rem;
+
+  @include mixins.media-tablet(screen) using ($type) {
+    align-items: center;
+    flex-direction: row;
+  }
+
+  @include mixins.media-xl(screen) using ($type) {
+    margin-bottom: 20rem;
+  }
+
+  &__info {
+    @include mixins.media-xl(screen) using ($type) {
+      margin-right: 9rem;
+      width: 30%;
+    }
+  }
+
+  &__meet {
+    color: variables.$red;
+    font-size: variables.$font-size-18;
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+
+  &__message {
+    color: variables.$gray-1;
+    font-size: variables.$font-size-36;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    width: 90%;
+  }
+
+  &__submessage {
+    color: variables.$gray-2;
+    margin-bottom: 3.6rem;
+    width: 90%;
+  }
+
+  &__images {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(9, 1fr);
+    gap: 0.5em 0.5em;
+
+    @include mixins.media-xl(screen) using ($type) {
+      grid-template-rows: repeat(11, 1fr);
+    }
+
+    & .person-1 {
+      grid-column-start: 7;
+      grid-column-end: 12;
+      grid-row-start: 1;
+      grid-row-end: 5;
+
+      @include mixins.media-xl(screen) using ($type) {
+        grid-row-start: 3;
+        grid-row-end: 7;
+      }
+    }
+    & .person-2 {
+      grid-column-start: 7;
+      grid-column-end: 13;
+      grid-row-start: 5;
+      grid-row-end: 10;
+
+      @include mixins.media-xl(screen) using ($type) {
+        grid-row-start: 7;
+        grid-row-end: 12;
+      }
+    }
+    & .person-3 {
+      grid-column-start: 1;
+      grid-column-end: 7;
+      grid-row-start: 3;
+      grid-row-end: 8;
+
+      @include mixins.media-xl(screen) using ($type) {
+        grid-row-start: 5;
+        grid-row-end: 10;
+      }
+    }
+  }
+
+  &__image {
+    border-radius: 24px;
+    min-height: 100%;
+  }
+}

@@ -2,12 +2,16 @@
 @use 'mixins';
 
 .navigation {
-  display: none;
+  background-color: white;
   font-size: variables.$font-size-18;
+  height: 0vh;
+  width: 0vw;
 
   @include mixins.media-tablet(screen) using ($type) {
     display: block;
     flex-grow: 1;
+    height: initial;
+    width: initial;
   }
 
   &__list {
@@ -19,8 +23,118 @@
 
   &__link {
     color: variables.$gray-1;
+    opacity: 0;
+    pointer-events: none;
+
+    @include mixins.media-tablet(screen) using ($type) {
+      opacity: 1;
+      pointer-events: all;
+    }
+
     &:hover {
       text-decoration: underline;
+    }
+  }
+}
+
+.menu-trigger {
+  display: none;
+}
+
+.menu-icon {
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10000;
+
+  @include mixins.media-tablet(screen) using ($type) {
+    display: none;
+  }
+}
+
+.menu-icon-line {
+  background-color: variables.$gray-1;
+  height: 2px;
+  margin-bottom: 4px;
+  width: 20px;
+}
+
+.menu-icon-line:last-child {
+  margin: 0;
+}
+
+#menu-trigger:checked {
+  // display the navigation tag when the checkbox is checked
+  ~ .navigation {
+    align-items: center;
+    border-radius: 50%;
+    display: flex;
+    height: 200vh;
+    justify-content: center;
+    position: fixed;
+    right: -50%;
+    text-align: center;
+    top: -50%;
+    transition: height 0.4s ease-in, width 0.4s ease-in;
+    width: 200vw;
+    z-index: 10;
+
+    > ul {
+      > .navigation__link {
+        opacity: 1;
+        margin-top: 4rem;
+        pointer-events: all;
+        transition: opacity 0.4s ease 0.4s;
+
+        &:nth-child(1) {
+          opacity: 1;
+          margin-top: 0;
+          transition: opacity 0.4s ease 0.4s;
+        }
+
+        &:nth-child(2) {
+          opacity: 1;
+          transition: opacity 0.4s ease 0.5s;
+        }
+
+        &:nth-child(3) {
+          opacity: 1;
+          transition: opacity 0.4s ease 0.6s;
+        }
+
+        &:nth-child(4) {
+          opacity: 1;
+          transition: opacity 0.4s ease 0.7s;
+        }
+
+        &:nth-child(5) {
+          opacity: 1;
+          transition: opacity 0.4s ease 0.8s;
+        }
+      }
+    }
+  }
+
+  ~ .menu-icon {
+    > .menu-icon-line {
+      margin: 0;
+      transition: all 0.4s ease;
+
+      &:nth-child(1) {
+        transform: rotate(45deg) translate(0px, -6px);
+        transform-origin: left;
+      }
+
+      &:nth-child(2) {
+        opacity: 0;
+      }
+
+      &:nth-child(3) {
+        transform: rotate(-45deg) translate(-1px, 7px);
+        transform-origin: left;
+      }
     }
   }
 }

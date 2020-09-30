@@ -42,24 +42,10 @@ a {
 section {
   padding-top: 7em;
 
+  @include mixins.media-tablet(screen) using ($type) {
+    padding-top: 8.5em;
+  }
   @include mixins.media-desktop(screen) using ($type) {
     padding-top: 10em;
   }
-}
-
-.container {
-  padding: 0 1em;
-  margin: 0 auto;
-  max-width: variables.$container-max-width;
-
-  @include mixins.media-tablet(screen) using ($type) {
-    padding: 0 2.125em;
-  }
-  @include mixins.media-desktop(screen) using ($type) {
-    padding: 0 3.25em;
-  }
-}
-
-.noscroll {
-  overflow: hidden;
 }

@@ -2,10 +2,6 @@
 @use 'mixins';
 
 .our-works {
-  margin: {
-    bottom: 10rem;
-  }
-
   &__cards {
     display: flex;
     flex-direction: column;

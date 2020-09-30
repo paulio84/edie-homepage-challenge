@@ -2,16 +2,6 @@
 @use 'mixins';
 
 .hero {
-  margin: {
-    bottom: 10rem;
-  }
-
-  @include mixins.media-desktop(screen) using ($type) {
-    margin: {
-      bottom: 20rem;
-    }
-  }
-
   &__question {
     color: variables.$blue;
     font-size: variables.$font-size-12;

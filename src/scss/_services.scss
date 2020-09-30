@@ -2,14 +2,6 @@
 @use 'mixins';
 
 .services {
-  margin: {
-    bottom: 10rem;
-  }
-
-  @include mixins.media-xl(screen) using ($type) {
-    margin-bottom: 20rem;
-  }
-
   &__cards {
     display: flex;
     flex-direction: column;

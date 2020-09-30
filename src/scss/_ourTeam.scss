@@ -4,15 +4,10 @@
 .our-team {
   display: flex;
   flex-direction: column;
-  margin-bottom: 10rem;
 
   @include mixins.media-tablet(screen) using ($type) {
     align-items: center;
     flex-direction: row;
-  }
-
-  @include mixins.media-xl(screen) using ($type) {
-    margin-bottom: 20rem;
   }
 
   &__info {

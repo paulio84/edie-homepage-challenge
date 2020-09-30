@@ -5,14 +5,6 @@
   color: variables.$gray-1;
   margin-bottom: 10rem;
 
-  @include mixins.media-desktop(screen) using ($type) {
-    margin-bottom: 15rem;
-  }
-
-  @include mixins.media-xl(screen) using ($type) {
-    margin-bottom: 20rem;
-  }
-
   &__quote {
     font-size: variables.$font-size-24;
     margin-bottom: 2rem;

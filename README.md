@@ -46,6 +46,11 @@ HTML, SCSS and JavaScript. Using Parcel as the build framework.
 
 This application/site was created as a submission to a [DevChallenges](https://devchallenges.io/challenges) challenge. The [challenge](https://devchallenges.io/challenges/xobQBuf8zWWmiYMIAZe0) was to build an application to complete the given user stories.
 
+## How to use
+
+- fork / clone the repository
+- run `npm start` to start on a local development server
+
 ## Contact
 
 - GitHub [@paulio84](https://github.com/paulio84})

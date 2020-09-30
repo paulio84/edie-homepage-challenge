@@ -39,6 +39,14 @@ a {
   text-decoration: none;
 }
 
+section {
+  padding-top: 7em;
+
+  @include mixins.media-desktop(screen) using ($type) {
+    padding-top: 10em;
+  }
+}
+
 .container {
   padding: 0 1em;
   margin: 0 auto;

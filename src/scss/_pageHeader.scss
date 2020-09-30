@@ -2,23 +2,31 @@
 @use 'mixins';
 
 .page-header {
-  align-items: center;
   background-color: white;
   color: variables.$gray-1;
-  display: flex;
-  padding: 1em;
+  padding: {
+    bottom: 1em;
+    left: 0em;
+    right: 0em;
+    top: 1em;
+  }
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 100;
 
   @include mixins.media-tablet(screen) using ($type) {
-    justify-content: space-between;
-    padding: 1.5em 2.125em;
+    padding: {
+      bottom: 1.5em;
+      top: 1.5em;
+    }
   }
 
   @include mixins.media-desktop(screen) using ($type) {
-    padding: 2em 3.25em;
+    padding: {
+      bottom: 2em;
+      top: 2em;
+    }
   }
 
   &__title {

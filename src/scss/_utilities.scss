@@ -54,6 +54,17 @@
   }
 }
 
+.u-flex-container {
+  @extend .u-container;
+
+  align-items: center;
+  display: flex;
+
+  @include mixins.media-tablet(screen) using ($type) {
+    justify-content: space-between;
+  }
+}
+
 .u-noscroll {
   overflow: hidden;
 }
